@@ -1,10 +1,6 @@
+import fmt
 from robusta.api import *
-
-import (
-    "openai"
-    "fmt"
-)
-
+import openai
 from openai.openai_object import OpenAIObject
 
 
