@@ -106,9 +106,11 @@ def chat_gpt_enricher(alert: PrometheusKubernetesAlert, params: ChatGPTTokenPara
         for choice in res.choices:
             answers.append(choice.text)
 
+    answers_st = "\n".join(answers)
+            
     if answers:
-        alert.add_enrichment([MarkdownBlock(f"ChatGPT Results *{search_term}*")])
-        alert.add_enrichment([ListBlock(answers)])
+        alert.add_enrichment([FileBlock(f"ChatGPT recommends about *{search_term}*", []byte(answers))])
+
     else:
         alert.add_enrichment(
             [
