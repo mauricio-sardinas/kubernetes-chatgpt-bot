@@ -111,7 +111,7 @@ def chat_gpt_enricher(alert: PrometheusKubernetesAlert, params: ChatGPTTokenPara
     answer_byte = bytes(answers_st, 'utf-8')
             
     if answers:
-        alert.add_enrichment([FileBlock(f"ChatGPT.txt", answer_byte)])
+        alert.add_enrichment([FileBlock(f"ChatGPT.response", answer_byte)])
 
     else:
         alert.add_enrichment(
