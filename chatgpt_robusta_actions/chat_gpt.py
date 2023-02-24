@@ -1,8 +1,8 @@
 from robusta.api import *
-import {
+import (
     openai,
     fmt
-}
+)
 from openai.openai_object import OpenAIObject
 
 
